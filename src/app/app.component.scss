@@ -1,0 +1,33 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.content {
+    height: 157.35vh;
+    @include flex(flex, space-between, column, stretch);
+    margin-bottom: 5vh;
+    margin-right: 2vw;
+}
+
+.all-content {
+    @include size($width-100, auto);
+    @include flex(flex, space-between, row, flex-start);
+    position: relative;
+    padding-bottom: 8vh;
+}
+
+.results {
+    @include size($width-100, 4vh);
+    @include flex(flex, space-between, row, center);
+    @include font(1.2rem, 550);
+
+    &__like-butn {
+        border-radius: $border-radius;
+        box-shadow: $shadow;
+        @include size(3vw, 3vw);
+        background-color: $color-violet-background;
+    }
+
+    &__like-image {
+        @include size(1.2vw, 1.6vh);
+    }
+}

@@ -1,0 +1,87 @@
+@use "./../../../variables" as *;
+@use "./../../../mixins" as *;
+
+.product-card {
+    @include size(20vw, 45vh);
+    background-color: $color-white;
+    padding-top: 2vh;
+    position: relative;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    &__name {
+        margin-bottom: 0.3vh;
+        margin-top: 1vh;
+        @include font(1rem, 700);
+    }
+
+    &__information {
+        @include font(0.9rem, 500);
+    }
+
+    &__information, &__name {
+        margin-left: 1.3vw;
+    }
+}
+
+.image {
+    margin-bottom: 3vh;
+    @include size($width-100, 25.2vh);
+    @include flex(flex, center, row, center);
+
+    &__goods {
+        max-width: 90%;
+        max-height: 100%;
+    }
+}
+
+.rating-price {
+    @include size($width-100, $line-heigth);
+    line-height: $line-heigth;
+    @include flex(flex, space-between, row, flex-start);
+    @include font(1rem, 600);
+}
+
+.rating {
+    @include size(3.7vw, 100%);
+    background-color: $color-violet-background;
+    color: $color-white;
+    text-align: center;
+    border-radius: $border-radius;
+    margin-left: 1.3vw;
+
+    &__image-star {
+        @include size(1.3vh, 1.3vh);
+        margin: 0 0.1vw;
+    }
+}
+.price {
+    margin-right: 1.3vw;
+}
+
+.product-card-buttons {
+    position:absolute;
+    bottom:0;
+    background-color: #EDEDED;
+    @include size($width-100, 4.2vh);
+    border-radius: $border-radius;
+
+    &__image-heart, &__image-basket {
+        @include size(1.3vh, 1.3vh);
+    }
+
+    &__wishlist, &__add {
+        @include size(50%, 100%);
+        @include font(1rem, 600);
+    }
+
+    &__wishlist {
+        border-radius: 0 0 0 1vh;
+    }
+
+    &__add {
+        border-radius: 0 0 1vh 0;
+        background-color: $color-violet-background;
+        color: $color-white;
+    }
+}

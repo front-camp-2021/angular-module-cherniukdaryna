@@ -1,0 +1,16 @@
+@mixin font ($font_size, $font-weight) {
+    font-size: $font_size;
+    font-weight: $font-weight;
+}
+
+@mixin flex ($display, $justify-content, $flex-direction, $align-items) {
+    display: $display;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+}
+
+@mixin size($width, $heigth) {
+    width: $width;
+    height: $heigth;
+}

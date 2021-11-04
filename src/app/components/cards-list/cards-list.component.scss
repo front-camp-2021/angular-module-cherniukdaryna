@@ -1,0 +1,11 @@
+@use "./../../../variables" as *;
+@use "./../../../mixins" as *;
+
+.catalog {
+    @include size(66vw, 141vh);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vh;
+}

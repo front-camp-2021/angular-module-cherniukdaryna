@@ -1,0 +1,48 @@
+@use "./../../../variables" as *;
+@use "./../../../mixins" as *;
+
+.header {
+    @include size($width-100, 7vh);
+    @include flex(flex, flex-start, row, center);
+    margin-bottom: 3.3vh;
+    padding-left: 1vw;
+
+    &__logo-header {
+        max-height: 6.67vh;
+        max-width: 4.6vw;
+        margin-right: 1vw;
+    }
+
+    &__title:link {
+        color: $color-violet-text;
+        @include font(2rem, 600)
+    }
+
+    &__title:hover {
+        text-decoration: underline;
+    }
+}
+
+.top-navigation {
+    @include size($width-100, 2vh);
+    @include flex(flex, flex-start, row, center);
+    margin-bottom: 3.3vh;
+    padding-left: 1vh;
+
+    &__image-home {
+        @include size(2vw, 2vh);
+    }
+
+    &__arrow {
+        @include size(1.5vw, 1.5vh);
+    }
+
+    &__link:link {
+        color: $color-violet-text;
+        @include font(1rem, 700);
+    }
+
+    &__link:hover {
+        text-decoration: underline;
+    }
+}

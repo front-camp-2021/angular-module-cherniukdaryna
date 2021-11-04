@@ -1,0 +1,64 @@
+@use "./../../../variables" as *;
+@use "./../../../mixins" as *;
+
+.filters-default {
+    @include size(28.57vw, 157.35vh);
+    position: relative;
+    @include flex(flex, flex-start, column, flex-start);
+    margin-left: 1vw;
+
+    &__buttonn-clear-all {
+        @include size($width-100, 5.2vh);
+        @include font(2rem, 500);
+        position: absolute;
+        bottom: 0;
+        background-color: $color-violet-background;
+        box-shadow: $shadow;
+        border-radius: $border-radius;
+        color: $color-white;
+    }
+}
+.filters-navigation {
+    @include size($width-100, 140.83vh);
+    @include font(1.3rem, 500);
+    padding: 1.5vh 2.5vw;
+    box-shadow: $shadow;
+    border-radius: $border-radius;
+    background-color: $color-white;
+
+    &__line {
+        @include size($width-100, auto);
+        margin: 3.2vh 0;
+    }
+}
+
+.header-filters {
+    @include flex(flex, space-between, row, center);
+    @include size($width-100, 4vh);
+    @include font(1.2rem, 700);
+    margin-bottom: 3.3vh;
+
+    &__image-back-arrow {
+        @include size(3.7vh, 3.7vh);
+        box-shadow: $shadow;
+        border-radius: $border-radius;
+        color: $color-white;
+    }
+}
+
+.first-filtres-list {
+    @include size($width-100, auto);
+
+    &__form {
+        margin-top: 1.8vh;
+    }
+}
+
+.second-filtres-list, .third-filtres-list {
+    @include size($width-100, auto);
+
+    &__form {
+        @include flex(flex, space-between, row, start);
+        margin-top: 1.8vh;
+    }
+}

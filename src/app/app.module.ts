@@ -12,6 +12,7 @@ import { FiltersListComponent } from './components/filters-list/filters-list.com
 import { InputComponent } from './components/input/input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     BrowserModule,
     AppRoutingModule,
     NgxSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

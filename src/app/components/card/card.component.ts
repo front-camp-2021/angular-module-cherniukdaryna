@@ -1,14 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-interface Product {
-  id: string,
-  images: string[],
-  title: string,
-  rating: number,
-  price: number,
-  category: string,
-  brand: string
-}
+import { Product } from 'src/app/interfaces/cardsInterface';
 
 @Component({
   selector: 'app-card',

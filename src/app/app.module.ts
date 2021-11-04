@@ -11,6 +11,7 @@ import { FilterItemComponent } from './components/filter-item/filter-item.compon
 import { FiltersListComponent } from './components/filters-list/filters-list.component';
 import { InputComponent } from './components/input/input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

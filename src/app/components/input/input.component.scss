@@ -23,19 +23,3 @@
     }
 }
 
-.results {
-    @include size($width-100, 4vh);
-    @include flex(flex, space-between, row, center);
-    @include font(1.2rem, 550);
-
-    &__like-butn {
-        border-radius: $border-radius;
-        box-shadow: $shadow;
-        @include size(3vw, 3vw);
-        background-color: $color-violet-background;
-    }
-
-    &__like-image {
-        @include size(1.2vw, 1.6vh);
-    }
-}

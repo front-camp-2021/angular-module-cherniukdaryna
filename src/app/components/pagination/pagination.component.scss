@@ -30,17 +30,7 @@
     @include flex(flex, center, row, flex-start);
     margin: 0 2vw;
     border-radius: 20px;
-    @include size(20.4vw, 2.04vw);
+    @include size(40.8vw, 2.04vw);
     background-color: rgba(237, 237, 237, 1);
-
-    &__link:link {
-        @include size(2.04vw, 2.04vw);
-        border-radius: 50%;
-        @include flex(flex, center, row, center);
-        background-color: rgba(237, 237, 237, 1);
-    }
-    &__link:hover, &__link:active {
-        background-color: $color-violet-background;
-        color: $color-white;
-    }
 }
+

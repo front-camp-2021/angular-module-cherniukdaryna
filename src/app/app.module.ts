@@ -13,6 +13,8 @@ import { InputComponent } from './components/input/input.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
+import { PageItemComponent } from './components/page-item/page-item.component';
+import { DoubleSliderComponent } from './components/double-slider/double-slider.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     FiltersListComponent,
     InputComponent,
     PaginationComponent,
+    PageItemComponent,
+    DoubleSliderComponent,
   ],
   imports: [
     BrowserModule,

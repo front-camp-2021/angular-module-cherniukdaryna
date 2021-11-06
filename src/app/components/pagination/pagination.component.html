@@ -1,22 +1,36 @@
-<footer class="footer">    
-    <a class="footer__arrow-back-left" href="#"> 
-      <img class="footer__image-arrow-back-left" src="../../../assets/img/2931162_arrow_back_left_direction_move_icon.svg" />
-    </a>
+<footer class="footer">
+  <a 
+  class="footer__arrow-back-left" 
+  href="#"
+  (click)='getPreviousPage()'
+  (click)='setCurrentPage()'
+  >
+    <img 
+      class="footer__image-arrow-back-left"
+      src="../../../assets/img/2931162_arrow_back_left_direction_move_icon.svg" 
+    />
+  </a>
 
-    <div class="links-list">
-      <a class="links-list__link" href="#">1</a>
-      <a class="links-list__link" href="#">2</a>
-      <a class="links-list__link" href="#">3</a>
-      <a class="links-list__link" href="#">4</a>
-      <a class="links-list__link" href="#">5</a>
-      <a class="links-list__link" href="#">6</a>
-      <a class="links-list__link" href="#">7</a>
-      <a class="links-list__link" href="#">8</a>
-      <a class="links-list__link" href="#">9</a>
-      <a class="links-list__link" href="#">10</a>    
-    </div>
+  <div class="links-list">
+    <app-page-item 
+      *ngFor="let page of pagesArray" 
+      [item]='page' 
+      (click)="getCurrentPage(page)"
+      (click)='setCurrentPage()'
+      [active]='page === currentPage ? "active": " " '
+    >
+    </app-page-item>
+  </div>
 
-    <a class="footer__arrow-forward-right" href="#"> 
-      <img class="footer__image-arrow-forward-right" src="../../../assets/img/2931159_arrow_forward_right_move_navigation_icon.svg"/>
-    </a> 
+  <a 
+  class="footer__arrow-forward-right" 
+  href="#"
+  (click)='getNextPage()'
+  (click)='setCurrentPage()'
+  >
+    <img 
+      class="footer__image-arrow-forward-right"
+      src="../../../assets/img/2931159_arrow_forward_right_move_navigation_icon.svg" 
+    />
+  </a>
 </footer>

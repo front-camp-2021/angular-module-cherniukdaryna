@@ -1,3 +1,3 @@
 <div class="catalog">
-  <app-card *ngFor="let product of productsList" [product]='product'></app-card>
+  <app-card *ngFor="let product of productsList.slice(this.currentPage * 9 - 9, this.currentPage * 9)" [product]='product'></app-card>
 </div>

@@ -6,6 +6,7 @@ import { PageService } from 'src/app/services/pageService/page.service';
 import { FilterService } from 'src/app/services/filterService/filter.service';
 import { PriceService } from 'src/app/services/filterService/price.service';
 import { products } from 'src/data/products';
+import { InputService } from 'src/app/services/inputService/input.service';
 
 @Component({
   selector: 'app-cards-list',
@@ -19,6 +20,7 @@ export class CardsListComponent implements OnInit, OnDestroy, DoCheck {
   brands: string[] = [];
   categories: string[] = [];
   price: any;
+  inputValue = '';
 
   private destoy = new Subject<void>();
 
@@ -26,7 +28,8 @@ export class CardsListComponent implements OnInit, OnDestroy, DoCheck {
     private secvices: StorageService,
     private pageService: PageService,
     private filtersService: FilterService,
-    private priceService: PriceService
+    private priceService: PriceService,
+    private inputService: InputService
   ) {
     this.currentPage = 1;
     this.resultList = [];
@@ -62,12 +65,19 @@ export class CardsListComponent implements OnInit, OnDestroy, DoCheck {
       .subscribe(data => {
         this.price = data
       });
+
+    this.inputService.getInputValue()
+      .pipe(takeUntil(this.destoy))
+      .subscribe(data => {
+        this.inputValue = data
+      });
   }
 
   ngDoCheck(): any {
     this.resultList = this.productsList.filter((item: any) => this.brands.length > 0 ? this.brands.includes(item.brand) : item.brand);
     this.resultList = this.resultList.filter((item: any) => this.categories.length > 0 ? this.categories.includes(item.category) : item.category);
     this.resultList = this.resultList.filter((item: any) => this.price.value <= item.price && item.price <= this.price.highValue);
+    this.resultList = this.resultList.filter((item: any) => item.title.toLowerCase().includes(this.inputValue, 0));
   }
 
   ngOnDestroy(): void {

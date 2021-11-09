@@ -15,6 +15,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
 import { PageItemComponent } from './components/page-item/page-item.component';
 import { DoubleSliderComponent } from './components/double-slider/double-slider.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DoubleSliderComponent } from './components/double-slider/double-slider.
     BrowserModule,
     AppRoutingModule,
     NgxSliderModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

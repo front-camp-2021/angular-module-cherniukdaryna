@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { StorageService } from 'src/app/services/storage.service';
+import { StorageService } from 'src/app/services/dataService/storage.service';
 import { takeUntil } from 'rxjs/operators';
+import { FilterService } from 'src/app/services/filterService/filter.service';
 
 @Component({
   selector: 'app-filters-list',
@@ -14,7 +15,10 @@ export class FiltersListComponent implements OnInit, OnDestroy {
 
   private destoy = new Subject<void>();
 
-  constructor(private secvices: StorageService) { }
+  constructor(
+    private secvices: StorageService,
+    private filtretionService: FilterService
+    ) { }
 
   ngOnInit(): void {
     this.secvices.getCategories()
@@ -30,8 +34,15 @@ export class FiltersListComponent implements OnInit, OnDestroy {
       });
   }
 
+  setValue(checkbox: string, section: string){
+    this.filtretionService.setCheckbox(checkbox, section);
+    
+  }
+
   ngOnDestroy(): void {
     this.destoy.next();
     this.destoy.complete();
   }
+
+
 }

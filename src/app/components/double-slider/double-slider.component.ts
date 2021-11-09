@@ -1,5 +1,6 @@
-import { Options } from '@angular-slider/ngx-slider';
-import { Component, OnInit, Optional } from '@angular/core';
+import { ChangeContext, Options } from '@angular-slider/ngx-slider';
+import { Component, OnInit } from '@angular/core';
+import { PriceService } from 'src/app/services/filterService/price.service';
 
 @Component({
   selector: 'app-double-slider',
@@ -7,16 +8,26 @@ import { Component, OnInit, Optional } from '@angular/core';
   styleUrls: ['./double-slider.component.scss']
 })
 export class DoubleSliderComponent implements OnInit {
-  value: number = 100;
-  highValue: number = 200;
+  value: number = 0;
+  highValue: number = 90000;
   options: Options = {
-    floor: 100,
-    ceil: 200
+    floor: 0,
+    ceil: 90000
   };
 
-  constructor() { }
+  constructor(private priceService: PriceService) { }
 
   ngOnInit(): void {
+  
   }
 
+ getPrice(changeContext: ChangeContext){
+    this.priceService.setPrice(changeContext);
+  }
+
+  resetForm(): void {
+    this.value = 0;
+    this.highValue = 90000;
+    this.priceService.setPrice({ pointerType: 0, value: 0, highValue: 90000 });
+  }
 }

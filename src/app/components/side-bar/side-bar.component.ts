@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
+import { FilterService } from 'src/app/services/filterService/filter.service';
+import { PriceService } from 'src/app/services/filterService/price.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,9 +11,17 @@ import { Options } from '@angular-slider/ngx-slider';
 })
 export class SideBarComponent implements OnInit {
   
-  constructor() { }
+  constructor(
+    private filterService: FilterService,
+    private priceService: PriceService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  setCheckbox(){
+    this.filterService.setClear();
+    this.filterService.mySubject.next(true);
   }
 
 }

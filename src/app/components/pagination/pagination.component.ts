@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PageService } from 'src/app/services/page.service';
+import { PageService } from 'src/app/services/pageService/page.service';
 
 @Component({
   selector: 'app-pagination',

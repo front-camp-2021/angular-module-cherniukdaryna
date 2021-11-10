@@ -1,5 +1,5 @@
 <div class="product-card">
-    <div class="image">
+    <div class="image" [routerLink]="['/', product.id]" (click)="getId(product.id)">
         <img class="image__goods" [src]="product.images[0]" />
     </div>
 
@@ -16,9 +16,9 @@
     <p class="product-card__information">{{product.title}}</p>
 
     <div class="product-card-buttons">
-        <button class="product-card-buttons__wishlist">
+        <button class="product-card-buttons__wishlist" (click)='addToWishList(product.id)'>
           <img class="product-card-buttons__image-heart" src="../../../assets/img/heart.svg"/>
-          <span class="product-card-buttons__name">WISHLIST</span>
+          <span class="product-card-buttons__name" >WISHLIST</span>
         </button><button class="product-card-buttons__add">
           <img class="product-card-buttons__image-basket" src="../../../assets/img/basket.svg"/>
           <span class="product-card-buttons__name">ADD TO CART</span>

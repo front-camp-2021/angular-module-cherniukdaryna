@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../../interfaces/cardsInterface';
 
 @Injectable({
@@ -10,6 +10,7 @@ export class StorageService {
   private cardsData = 'http://localhost:3000/products';
   private categoriesData = 'http://localhost:3000/categories';
   private brandsData = 'http://localhost:3000/brands';
+  id =  new BehaviorSubject<string>('');
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +24,13 @@ export class StorageService {
 
   getBrands(): Observable<any>{
     return this.http.get(this.brandsData);
+  }
+
+  getId():BehaviorSubject<string>{
+    return this.id;
+  }
+
+  setId(value:string):void{
+    this.id.next(value);
   }
 }

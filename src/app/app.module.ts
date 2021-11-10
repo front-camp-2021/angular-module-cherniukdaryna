@@ -16,6 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageItemComponent } from './components/page-item/page-item.component';
 import { DoubleSliderComponent } from './components/double-slider/double-slider.component';
 import { FormsModule } from '@angular/forms';
+import { AllContentComponent } from './components/all-content/all-content.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { FormsModule } from '@angular/forms';
     PaginationComponent,
     PageItemComponent,
     DoubleSliderComponent,
+    AllContentComponent,
+    NotFoundPageComponent,
+    BreadCrumbsComponent,
+    WishListComponent,
+    ItemCardComponent,
   ],
   imports: [
     BrowserModule,

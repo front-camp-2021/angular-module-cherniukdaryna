@@ -21,6 +21,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
+import { TimeService } from './guards/time.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,11 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: TimeService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

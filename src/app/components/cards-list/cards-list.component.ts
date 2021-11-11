@@ -37,7 +37,6 @@ export class CardsListComponent implements OnInit, OnDestroy, DoCheck {
   ) {
     this.currentPage = 1;
     this.resultList = [];
-    console.log(Object.values(this.route.data)[6].type)
   }
 
   ngOnInit(): void {

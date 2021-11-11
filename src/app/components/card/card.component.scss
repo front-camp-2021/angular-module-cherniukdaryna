@@ -25,6 +25,7 @@
 }
 
 .image {
+    cursor: pointer;
     margin-bottom: 3vh;
     @include size($width-100, 25.2vh);
     @include flex(flex, center, row, center);

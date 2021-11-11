@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllContentComponent } from './components/all-content/all-content.component';
-import { CardComponent } from './components/card/card.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
+import { TimeService } from './guards/time.service';
 
 const routes: Routes = [
   {
     path: 'products/wishList',
     component: WishListComponent,
     data: {type: 'wishList'},
+    canActivate: [TimeService]
   },
   {
     path: 'products',

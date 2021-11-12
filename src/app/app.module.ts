@@ -3,51 +3,41 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { CardComponent } from './components/card/card.component';
-import { CardsListComponent } from './components/cards-list/cards-list.component';
-import { FilterItemComponent } from './components/filter-item/filter-item.component';
-import { FiltersListComponent } from './components/filters-list/filters-list.component';
-import { InputComponent } from './components/input/input.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
+
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
-import { PageItemComponent } from './components/page-item/page-item.component';
-import { DoubleSliderComponent } from './components/double-slider/double-slider.component';
+/*import { PageItemComponent } from './components/page-item/page-item.component';
+import { DoubleSliderComponent } from './components/double-slider/double-slider.component';*/
 import { FormsModule } from '@angular/forms';
-import { AllContentComponent } from './components/all-content/all-content.component';
+/*import { AllContentComponent } from './components/all-content/all-content.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
-import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.component';
+import { BreadCrumbsComponent } from './shared/bread-crumbs/bread-crumbs.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
-import { ItemCardComponent } from './components/item-card/item-card.component';
-import { TimeService } from './guards/time.service';
+import { ItemCardComponent } from './components/item-card/item-card.component';*/
+import { TimeService } from './core/guards/time.service';
+import { ComponentsModule } from './components/components.module';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SideBarComponent,
-    CardComponent,
-    CardsListComponent,
-    FilterItemComponent,
-    FiltersListComponent,
-    InputComponent,
-    PaginationComponent,
-    PageItemComponent,
-    DoubleSliderComponent,
-    AllContentComponent,
-    NotFoundPageComponent,
-    BreadCrumbsComponent,
-    WishListComponent,
-    ItemCardComponent,
+    HeaderComponent
+    
+    //AllContentComponent,
+    //NotFoundPageComponent,
+    //BreadCrumbsComponent,
+    //WishListComponent,
+    //ItemCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxSliderModule,
     HttpClientModule,
-    FormsModule
+    
+
+    ComponentsModule,
+    CoreModule
   ],
   providers: [
     {

@@ -4,7 +4,8 @@ import { AllContentComponent } from './components/all-content/all-content.compon
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
-import { TimeService } from './guards/time.service';
+import { TimeService } from './core/guards/time.service';
+
 
 const routes: Routes = [
   {

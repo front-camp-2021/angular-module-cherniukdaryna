@@ -1,0 +1,25 @@
+@use "./../../../../variables" as *;
+@use "./../../../../mixins" as *;
+
+.search {
+    @include size($width-100, 5.75vh);
+    @include flex(flex, space-between, row, flex-start);
+
+    &__input {
+        @include size(90%, 100%);
+        border-radius: $border-radius;
+        box-shadow: $shadow;
+        @include font(1.7rem, 500);
+    }
+
+    &__btn-glass {
+        @include size(2.8vw, 100%);
+        border-radius: $border-radius;
+        box-shadow: $shadow;
+    }
+
+    &__image-search {
+        @include size(2vw, 4vh);
+    }
+}
+

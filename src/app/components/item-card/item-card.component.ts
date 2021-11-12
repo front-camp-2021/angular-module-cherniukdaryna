@@ -1,7 +1,7 @@
 import { Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { StorageService } from 'src/app/services/dataService/storage.service';
+import { StorageService } from 'src/app/core/services/dataService/storage.service';
 
 @Component({
   selector: 'app-item-card',

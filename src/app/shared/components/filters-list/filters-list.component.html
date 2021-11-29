@@ -1,0 +1,22 @@
+<div class="second-filtres-list">
+
+  <p class="second-filtres-list__name--bold"><b>Category</b></p><br>
+
+  <form class="second-filtres-list__form" action="" method="GET" name="category">
+    <div>
+      <app-filter-item *ngFor="let category of categoryList" [item]='category' (change)='setValue(category, "categories")'></app-filter-item>
+    </div>
+  </form>
+</div>
+
+<img class="filters-navigation__line" src="../../../assets/img/Divider.png" /><br>
+
+<div class="third-filtres-list">
+  <p class="third-filtres-list__name--bold"><b>Brand</b></p><br>
+
+  <form class="third-filtres-list__form" action="" method="GET" name="category" >
+    <div>
+      <app-filter-item *ngFor="let brand of brandsList" [item]='brand' (change)='setValue(brand, "brands")' ></app-filter-item>
+    </div>
+  </form>
+</div>

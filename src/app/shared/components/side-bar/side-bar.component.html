@@ -1,0 +1,19 @@
+<section class="filters-default">
+
+  <div class="header-filters">
+    <b class="header-filters__name">Filtres</b>
+    <a class="header-filters__back" href="#">
+      <img class="header-filters__image-back-arrow" src="../../../assets/img/4829860_arrow_back_left_icon.svg" />
+    </a>
+  </div>
+
+  <div class="filters-navigation">
+    <p class="second-filtres-list__name--bold"><b>Price</b></p><br>
+
+    <app-double-slider #doubleSliderComponent ></app-double-slider>
+    
+    <app-filters-list #filtersList></app-filters-list>
+  </div>
+
+  <button class="filters-default__buttonn-clear-all" (click)="doubleSliderComponent.resetForm()" (click)="setCheckbox()" >Clear all filters</button>
+</section>

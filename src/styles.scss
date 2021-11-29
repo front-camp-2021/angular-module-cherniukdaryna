@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./variables" as *;
+@use "./mixins" as *;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: $border;
+    font-family: $font-style;
+    text-decoration: $text-decoration;
+}
+
+html {
+    font-size: 95%;
+}
+
+body {
+    background-color: rgba(249, 249, 249, 0.911);
+    overflow-y: scroll;
+    color: $text-color;
+}
+
+button, a{
+    cursor: pointer;
+}
+

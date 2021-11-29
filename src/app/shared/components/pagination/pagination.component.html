@@ -1,0 +1,36 @@
+<footer class="footer">
+  <a 
+  class="footer__arrow-back-left" 
+  href="#"
+  (click)='getPreviousPage()'
+  (click)='setCurrentPage()'
+  >
+    <img 
+      class="footer__image-arrow-back-left"
+      src="../../../assets/img/2931162_arrow_back_left_direction_move_icon.svg" 
+    />
+  </a>
+
+  <div class="links-list">
+    <app-page-item 
+      *ngFor="let page of pagesArray" 
+      [item]='page' 
+      (click)="getCurrentPage(page)"
+      (click)='setCurrentPage()'
+      [active]='page === currentPage ? "active": " " '
+    >
+    </app-page-item>
+  </div>
+
+  <a 
+  class="footer__arrow-forward-right" 
+  href="#"
+  (click)='getNextPage()'
+  (click)='setCurrentPage()'
+  >
+    <img 
+      class="footer__image-arrow-forward-right"
+      src="../../../assets/img/2931159_arrow_forward_right_move_navigation_icon.svg" 
+    />
+  </a>
+</footer>
